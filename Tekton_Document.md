@@ -73,6 +73,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 Verify that the Docker Engine installation is successful by running the **hello-world** image.
 ```
+sudo service docker start
+```
+```
 sudo docker run hello-world
 ```
 #### output
