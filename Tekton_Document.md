@@ -321,7 +321,7 @@ A Pipeline defines an ordered series of Tasks arranged in a specific execution o
 
 In this section you are going to create your first **Pipeline,** that will include both the **“Hello World!”** and **“Goodbye!”** Tasks.
 
-**1:-** Create a new file named hello-goodbye-pipeline.yaml and add the following content:
+**1:-** Create a new file named **hello-goodbye-pipeline.yaml** and add the following content:
 ```
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
@@ -376,6 +376,8 @@ kubectl apply --filename hello-goodbye-pipeline-run.yaml
 ```
 pipelinerun.tekton.dev/hello-goodbye-run created
 Tekton now starts running the Pipeline.
+```
+Apply:-
 ```
 tkn pipelinerun logs hello-goodbye-run -f -n default
 ```
