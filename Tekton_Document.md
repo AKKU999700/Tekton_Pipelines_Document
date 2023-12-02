@@ -382,7 +382,7 @@ Apply:-
 tkn pipelinerun logs hello-goodbye-run -f -n default
 ```
 ### Output Shows
-
+```
 durgesh@durgesh-HP-250-G6-Notebook-PC:/media/durgesh/08B292C3B292B4A2/Tekton Pipeline$ tkn pipelinerun logs hello-goodbye-run -f -n default
 [hello : echo] Hello World
 
@@ -415,14 +415,15 @@ This guide uses a local cluster with minikube
 #### Install Tekton Trigger
 
 **1:-** Use kubectl to install Tekton Triggers:
-```
+
 kubectl apply --filename \
+```
 https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml
 kubectl apply --filename \
 https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml
 ```
-
 **2:-** Monitor the installation:
+Apply:-
 ```
 kubectl get pods --namespace tekton-pipelines --watch
 ```
@@ -442,7 +443,7 @@ Press Ctrl + C to stop monitoring.
 
 **1:-** **Create a Trigger Template**
 
-Create a new file named trigger-template.yaml and add the following:
+Create a new file named **trigger-template.yaml** and add the following:
 ```
 apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerTemplate
@@ -510,7 +511,7 @@ triggerbinding.triggers.tekton.dev/hello-binding created
 
 The EventListener object encompasses both the TriggerTemplate and the TriggerBinding.
 
-Create a file named event-listener.yaml and add the following:
+Create a file named **event-listener.yaml** and add the following:
 
 **1:-** Create a file named **event-listener.yaml** and add the following:
 ```
@@ -532,7 +533,7 @@ This declares that when an event is detected, it will run the TriggerBinding and
 
 2:- The EventListener requires a service account to run. To create the service account for this example 
 
-create a file named rbac.yaml and add the following:
+create a file named **rbac.yaml** and add the following:
 ```
 apiVersion: v1
 kind: ServiceAccount
