@@ -284,7 +284,7 @@ Hello World
 **2:-** **Install tkn, The Tekton CLI.**
 
 **Create and run a second Task**  
-                                      You already have a **“Hello World!”** Task. To create a second **“Goodbye!”** 
+ You already have a **“Hello World!”** Task. To create a second **“Goodbye!”** 
  Create a new file name **goodbye-world.yaml** and add following content:
  ```
 apiVersion: tekton.dev/v1beta1
@@ -322,7 +322,7 @@ A Pipeline defines an ordered series of Tasks arranged in a specific execution o
 In this section you are going to create your first **Pipeline,** that will include both the **“Hello World!”** and **“Goodbye!”** Tasks.
 
 **1:-** Create a new file named hello-goodbye-pipeline.yaml and add the following content:
-
+```
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
