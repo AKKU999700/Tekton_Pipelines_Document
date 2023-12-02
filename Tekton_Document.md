@@ -294,13 +294,13 @@ metadata:
 spec:
   params:
   - name: username
-	type: string
+    type: string
   steps:
-	- name: goodbye
-  	image: ubuntu
-  	script: |
-    	#!/bin/bash
-    	echo "Goodbye $(params.username)!"
+    - name: goodbye
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        echo "Goodbye $(params.username)!"
 ```
 This Task takes one parameter, **username.** Whenever this Task is used a value for that parameter must be passed to the Task.
 
@@ -312,7 +312,7 @@ kubectl apply --filename goodbye-world.yaml
 ```
 durgesh@durgesh-HP-250-G6-Notebook-PC:/media/durgesh/08B292C3B292B4A2/Tekton Pipeline$ kubectl apply --filename goodbye-world.yaml
 task.tekton.dev/goodbye created
-
+```
 When a Task is part of a Pipeline, Tekton creates a TaskRun object for every task in the Pipeline.
 
 **Create and run a pipelines**
@@ -322,7 +322,7 @@ A Pipeline defines an ordered series of Tasks arranged in a specific execution o
 In this section you are going to create your first **Pipeline,** that will include both the **“Hello World!”** and **“Goodbye!”** Tasks.
 
 **1:-** Create a new file named hello-goodbye-pipeline.yaml and add the following content:
-```
+
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
