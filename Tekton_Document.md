@@ -380,7 +380,7 @@ Tekton now starts running the Pipeline.
 tkn pipelinerun logs hello-goodbye-run -f -n default
 ```
 ### Output Shows
-```
+
 durgesh@durgesh-HP-250-G6-Notebook-PC:/media/durgesh/08B292C3B292B4A2/Tekton Pipeline$ tkn pipelinerun logs hello-goodbye-run -f -n default
 [hello : echo] Hello World
 
