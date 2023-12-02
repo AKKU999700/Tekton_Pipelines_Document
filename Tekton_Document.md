@@ -208,11 +208,11 @@ metadata:
   name: hello
 spec:
   steps:
-	- name: echo
-  	image: alpine
-  	script: |
-    	#!/bin/sh
-    	echo "Hello World"
+    - name: echo
+      image: alpine
+      script: |
+        #!/bin/sh
+        echo "Hello World"
   ```      
 
 **2:-** Apply the changes your cluster:
