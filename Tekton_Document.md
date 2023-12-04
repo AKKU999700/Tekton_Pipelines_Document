@@ -330,19 +330,19 @@ metadata:
 spec:
   params:
   - name: username
-	type: string
+    type: string
   tasks:
-	- name: hello
-  	taskRef:
-    	name: hello
-	- name: goodbye
-  	runAfter:
-    	- hello
-  	taskRef:
-    	name: goodbye
-  	params:
-  	- name: username
-    	value: $(params.username)
+    - name: hello
+      taskRef:
+        name: hello
+    - name: goodbye
+      runAfter:
+        - hello
+      taskRef:
+        name: goodbye
+      params:
+      - name: username
+        value: $(params.username)   	
 ```   
  
 **2:-** Apply the Pipeline configuration to your cluster:
@@ -358,10 +358,10 @@ metadata:
   name: hello-goodbye-run
 spec:
   pipelineRef:
-	name: hello-goodbye
+    name: hello-goodbye
   params:
   - name: username
-	value: "Tekton"
+    value: "Tekton"
 ```    
 
 This sets the actual value for the **username** parameter: **"Tekton".**
@@ -452,18 +452,18 @@ metadata:
 spec:
   params:
   - name: username
-	default: "Kubernetes"
+    default: "Kubernetes"
   resourcetemplates:
   - apiVersion: tekton.dev/v1beta1
-	kind: PipelineRun
-	metadata:
-  	generateName: hello-goodbye-run-
-	spec:
-  	pipelineRef:
-    	name: hello-goodbye
-  	params:
-  	- name: username
-    	value: $(tt.params.username)
+    kind: PipelineRun
+    metadata:
+      generateName: hello-goodbye-run-
+    spec:
+      pipelineRef:
+        name: hello-goodbye
+      params:
+      - name: username
+        value: $(tt.params.username)
  ```
 
 The **PipelineRun** object that you created in the previous tutorial is now included in the template declaration. This trigger expects the **username** parameter to be available; if it’s not, it assigns a default value: **“Kubernetes”.**
@@ -489,10 +489,10 @@ apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerBinding
 metadata:
   name: hello-binding
-spec:
+spec: 
   params:
   - name: username
-	value: $(body.username)
+    value: $(body.username)
 ```    
 
 This TriggerBinding gets some information and saves it in the username variable.
@@ -522,11 +522,11 @@ metadata:
 spec:
   serviceAccountName: tekton-robot
   triggers:
-	- name: hello-trigger
-  	bindings:
-  	- ref: hello-binding
-  	template:
-    	ref: hello-template
+    - name: hello-trigger 
+      bindings:
+      - ref: hello-binding
+      template:
+        ref: hello-template
 ```        
 
 This declares that when an event is detected, it will run the TriggerBinding and the TriggerTemplate.
