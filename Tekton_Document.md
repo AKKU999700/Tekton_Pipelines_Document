@@ -342,7 +342,8 @@ spec:
         name: goodbye
       params:
       - name: username
-        value: $(params.username)   	
+        value: $(params.username)
+  	
 ```   
  
 **2:-** Apply the Pipeline configuration to your cluster:
