@@ -1,7 +1,7 @@
 # Tekton Pipelines
 
 # Getting start with Tasks
-## Open your favorite editor & use Terminal
+## Open your favorite editor and use Its Terminal
 
  ### Set up and run first Tekton Task
 * Create a Kubernetes Cluster with [minikube.](https://minikube.sigs.k8s.io/)
