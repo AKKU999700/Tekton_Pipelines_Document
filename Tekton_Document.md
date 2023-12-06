@@ -1,14 +1,23 @@
+# Tekton Pipelines
+
 # Getting start with Tasks
+## Open your favorite editor & use Terminal
 
  ### Set up and run first Tekton Task
-* Create a Kubernetes Cluster with minikube
+* Create a Kubernetes Cluster with [minikube.](https://minikube.sigs.k8s.io/)
 * Install tekton pipeline
 * Create a Task
 * Use TaskRun to instantiate and run task
   
 # Prerequisites
-* Install Minikube  **The First step :- Installation**
-* Install Kubectl
+* [Install Minikube](https://minikube.sigs.k8s.io/docs/start/)  **The First step :- Installation**
+* [Install Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+* Create a Kubernetes cluster
+
+* Create a cluster
+* ```
+  minikube start --kubernetes-version v1.25.14
+  ```
 
 **1:-** minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes
 
@@ -281,7 +290,7 @@ Hello World
 ### Prerequisites
 **1:-** Complete the getting started with Tasks **Do not clean up your resources,skip the last section.**
 
-**2:-** **Install tkn, The Tekton CLI.**
+**2:-** **[Install tkn, The Tekton CLI.](https://tekton.dev/docs/cli/)**
 
 **Create and run a second Task**  
  You already have a **“Hello World!”** Task. To create a second **“Goodbye!”** 
@@ -378,6 +387,8 @@ kubectl apply --filename hello-goodbye-pipeline-run.yaml
 pipelinerun.tekton.dev/hello-goodbye-run created
 Tekton now starts running the Pipeline.
 ```
+Tekton now starts running the Pipeline.
+To see the logs of the PipelineRun, use the following command:
 Apply:-
 ```
 tkn pipelinerun logs hello-goodbye-run -f -n default
